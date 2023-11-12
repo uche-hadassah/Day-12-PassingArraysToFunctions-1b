@@ -1,6 +1,6 @@
-/*b) Re-write the function above, so that it doesn’t assume that a -1 is at the end of the 
-array parameter source. You will need to pass the size of the array as an additional 
-parameter. Again, test your function with a user defined array (sentinel controlled).*/#include<iostream>
+/*Name:Uche Hadassah
+This program receives numbers from the user until a sentinel is entered,
+stores it in an array,copies it into another array, and outputs the two arrays. It does not use the sentinel in the function*/#include<iostream>
 using namespace std;
 const int MAX = 100;
 void CopyArray(int[], int[],int&);//Function prototype
@@ -8,7 +8,8 @@ int main()
 {
 	int arr1[MAX];
 	int arr2[MAX];
-	int i = 0;
+	int i = 0;//This will represent the size of the array
+
 	cout << "\nEnter the numbers(-1 to end):";
 	do
 	{
@@ -31,7 +32,6 @@ void CopyArray(int source[], int destination[], int &size)
 		destination[j] = source[j];//Equates the two arrays
 		j++;
 	}
-	//sets the last value in the dest. array to the sentinel since we want to output that too
 	cout << "\nSource Array:";
 	for (int i = 0; i <= size; i++)//Outputs the source array
 	{
